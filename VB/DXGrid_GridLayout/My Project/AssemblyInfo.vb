@@ -24,7 +24,6 @@ Imports System.Windows
 #If SILVERLIGHT Then
 ' The following GUID is for the ID of the typelib if this project is exposed to COM
 <Assembly: Guid("84d66904-be7f-4926-b1bc-c0688fdac684")>
-<Assembly: AssemblyVersion("1.0.0.0"), assembly: AssemblyFileVersion("1.0.0.0")>
 #Else
 'In order to begin building localizable applications, set 
 '<UICulture>CultureYouAreCodingWith</UICulture> in your .csproj file
@@ -35,7 +34,7 @@ Imports System.Windows
 
 '[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.Satellite)]
 
-<Assembly: ThemeInfo(ResourceDictionaryLocation.None, ResourceDictionaryLocation.SourceAssembly), assembly: AssemblyVersion("1.0.0.0"), assembly: AssemblyFileVersion("1.0.0.0")> 'where the generic resource dictionary is located - where theme specific resource dictionaries are located
+<Assembly: ThemeInfo(ResourceDictionaryLocation.None, ResourceDictionaryLocation.SourceAssembly)> 'where the generic resource dictionary is located - where theme specific resource dictionaries are located
     '(used if a resource is not found in the page, 
     ' or application resource dictionaries)
     '(used if a resource is not found in the page, 
@@ -52,3 +51,5 @@ Imports System.Windows
 ' You can specify all the values or you can default the Build and Revision Numbers 
 ' by using the '*' as shown below:
 ' [assembly: AssemblyVersion("1.0.*")]
+<Assembly: AssemblyVersion("1.0.0.0")>
+<Assembly: AssemblyFileVersion("1.0.0.0")>

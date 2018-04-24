@@ -39,14 +39,16 @@ Namespace DXGrid_GridLayout
                 ' For production applications this error handling should be replaced with something that will 
                 ' report the error to the website and stop the application.
                 e.Handled = True
-                Deployment.Current.Dispatcher.BeginInvoke(Sub() ReportErrorToDOM(e))
+                Deployment.Current.Dispatcher.BeginInvoke(Sub()
+                    ReportErrorToDOM(e)
+                End Sub)
             End If
         End Sub
 
         Private Sub ReportErrorToDOM(ByVal e As ApplicationUnhandledExceptionEventArgs)
             Try
                 Dim errorMsg As String = e.ExceptionObject.Message + e.ExceptionObject.StackTrace
-                errorMsg = errorMsg.Replace(""""c, "'"c).Replace(ControlChars.CrLf, ControlChars.Lf)
+                errorMsg = errorMsg.Replace(""""c, "'"c).Replace(ControlChars.CrLf, "\n")
 
                 System.Windows.Browser.HtmlPage.Window.Eval("throw new Error(""Unhandled Error in Silverlight Application " & errorMsg & """);")
             Catch e1 As Exception

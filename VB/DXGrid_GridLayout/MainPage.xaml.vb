@@ -48,10 +48,26 @@ Namespace DXGrid_GridLayout
     Public Class IssueList
         Public Shared Function GetData() As List(Of IssueDataObject)
             Dim data As New List(Of IssueDataObject)()
-            data.Add(New IssueDataObject() With {.IssueName = "Transaction History", .IssueType = "Bug", .IsPrivate = True})
-            data.Add(New IssueDataObject() With {.IssueName = "Ledger: Inconsistency", .IssueType = "Bug", .IsPrivate = False})
-            data.Add(New IssueDataObject() With {.IssueName = "Data Import", .IssueType = "Request", .IsPrivate = False})
-            data.Add(New IssueDataObject() With {.IssueName = "Data Archiving", .IssueType = "Request", .IsPrivate = True})
+            data.Add(New IssueDataObject() With { _
+                .IssueName = "Transaction History", _
+                .IssueType = "Bug", _
+                .IsPrivate = True _
+            })
+            data.Add(New IssueDataObject() With { _
+                .IssueName = "Ledger: Inconsistency", _
+                .IssueType = "Bug", _
+                .IsPrivate = False _
+            })
+            data.Add(New IssueDataObject() With { _
+                .IssueName = "Data Import", _
+                .IssueType = "Request", _
+                .IsPrivate = False _
+            })
+            data.Add(New IssueDataObject() With { _
+                .IssueName = "Data Archiving", _
+                .IssueType = "Request", _
+                .IsPrivate = True _
+            })
             Return data
         End Function
     End Class
