@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Globalization;
 using System.Linq;
 using System.Windows;
+using System.Windows.Markup;
+using DevExpress.Xpf.Core;
 
 namespace DXGrid_GridLayout {
     /// <summary>
@@ -52,6 +55,11 @@ namespace DXGrid_GridLayout {
         }
 #else
         protected override void OnStartup(StartupEventArgs e) {
+            FrameworkElement.LanguageProperty.OverrideMetadata(
+                typeof(FrameworkElement),
+                new FrameworkPropertyMetadata(XmlLanguage.GetLanguage("de-DE"))
+                );
+
             base.OnStartup(e);
             StartupUri = new Uri("Window1.xaml", UriKind.Relative);
         }
